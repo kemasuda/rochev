@@ -4,15 +4,15 @@ radial velocity model for tidally interacting binaries
 
 
 
-#### usage
+## usage
 
 check demo notebooks
 
 
 
-#### references
+## references
 
-[ Masuda & Hirano (2021) ] (https://ui.adsabs.harvard.edu/abs/2021ApJ...910L..17M/abstract)
+[Masuda & Hirano (2021)](https://ui.adsabs.harvard.edu/abs/2021ApJ...910L..17M/abstract)
 
 
 
