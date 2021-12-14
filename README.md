@@ -16,3 +16,7 @@ check demo notebooks
 
 
 
+## authors
+
+Kento Masuda
+
