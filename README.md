@@ -6,6 +6,8 @@ radial velocity model for tidally interacting binaries
 
 ## usage
 
+``` python setup.py install```
+
 check demo notebooks
 
 
