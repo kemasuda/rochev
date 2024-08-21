@@ -9,5 +9,6 @@ __description__ = "radial velocity model for tidally interacting binaries"
 
 from . import hputil
 from . import ldgdutil
+from . import lineprof
 from .roche import *
 from .ccfvel import *
