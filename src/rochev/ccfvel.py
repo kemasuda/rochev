@@ -1,9 +1,28 @@
+__all__ = ["get_ccfvel_itrnr"]
+
 import jax.numpy as jnp
 from jax import jit
 from jax.lax import scan
 
 @jit
 def get_ccfvel_argmax(v0, Xf, vel_weight, cosg, vsini, vmac, vsigma):
+    """derive RV shifts corresponding to CCF peak using argmax 
+    compatibility with autograd should be checked
+    NOT WORKING
+    
+        Args:
+            v0: initial guess (not necessary)
+            Xf: flux of each pixel
+            vel_weight: velocity of each pixel
+            cosg: foreshortening of each pixel
+            vsini: vsini
+            vmac: macroturbulence velocity (radial-tangential model)
+            vsigma: line width of the CCF template
+
+        Returns:
+            velocity shifts
+    
+    """
     _cosg = jnp.where(jnp.abs(cosg)<1, cosg, cosg/jnp.abs(cosg))
     _sing = jnp.sqrt(1.-_cosg**2)
     dv2 = (vels[:,None,None] - vel_weight*vsini)**2
@@ -16,6 +35,21 @@ def get_ccfvel_argmax(v0, Xf, vel_weight, cosg, vsini, vmac, vsigma):
 
 @jit
 def get_ccfvel_itrnr(v0, Xf, vel_weight, cosg, vsini, vmac, vsigma, nitr=50):
+    """derive RV shifts corresponding to CCF peak via iteration
+    
+        Args:
+            v0: initial guess
+            Xf: flux of each pixel
+            vel_weight: velocity of each pixel
+            cosg: foreshortening of each pixel
+            vsini: vsini
+            vmac: macroturbulence velocity (radial-tangential model)
+            vsigma: line width of the CCF template
+
+        Returns:
+            velocity shifts
+    
+    """
     v = v0
 
     _cosg = jnp.where(jnp.abs(cosg)<1, cosg, cosg/jnp.abs(cosg))
