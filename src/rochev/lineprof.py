@@ -21,7 +21,7 @@ def kernel(vels, fluxmap, velmap, cosgmap, vmac):
     """
     dvij = (vels[:, None] - velmap) / vmac
     singmap = jnp.sqrt(1. - cosgmap**2)
-    Mv = jnp.sum( (jnp.exp(-(dvij/cosgmap)**2) + jnp.exp(-(dvij/singmap)**2))*fluxmap, axis=1 )
+    Mv = jnp.sum( (jnp.exp(-0.5*(dvij/cosgmap)**2) + jnp.exp(-0.5*(dvij/singmap)**2))*fluxmap, axis=1 )
     Mv /= jnp.sum(fluxmap)
     return Mv
 
