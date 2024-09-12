@@ -1,6 +1,6 @@
 # rochev
 
-radial velocity model for tidally interacting binaries
+radial velocity model for tidally distorted binaries
 
 
 
@@ -14,7 +14,7 @@ check demo notebooks
 
 ## references
 
-[Masuda & Hirano (2021)](https://ui.adsabs.harvard.edu/abs/2021ApJ...910L..17M/abstract)
+[Masuda & Hirano (2021)](https://ui.adsabs.harvard.edu/abs/2021ApJ...910L..17M/abstract), Tomoyoshi, Masuda, et al. (2024)
 
 
 
